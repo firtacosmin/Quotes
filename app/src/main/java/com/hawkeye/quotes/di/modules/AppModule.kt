@@ -1,4 +1,4 @@
-package com.hawkeye.quotes.di
+package com.hawkeye.quotes.di.modules
 
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -13,9 +13,6 @@ import javax.inject.Singleton
 @Module
 class AppModule {
 
-    @Provides @Singleton
-    fun provideDatabaseReference():DatabaseReference{
-        return FirebaseDatabase.getInstance().getReference();
-    }
+
 
 }

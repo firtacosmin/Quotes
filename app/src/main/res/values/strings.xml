@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Quotes</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_quote_of_the_day">Of The Day</string>
+    <string name="random_quote">Random</string>
 </resources>
