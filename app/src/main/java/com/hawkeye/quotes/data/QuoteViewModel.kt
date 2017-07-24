@@ -13,11 +13,9 @@ import javax.inject.Inject
  * Created by firta on 7/23/2017.
  *
  */
-class QuoteViewModel @Inject constructor(app:Application): AndroidViewModel(app) {
+class QuoteViewModel @Inject constructor(dbRef: DatabaseReference, app:Application): AndroidViewModel(app) {
 
 
-    @Inject
-    lateinit var dbRef: DatabaseReference
 
     var quoteOfTheDayDbRef:Query
     var quoteOfTheDayLiveData:MutableLiveData<Quote>

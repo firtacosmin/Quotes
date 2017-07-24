@@ -6,6 +6,7 @@ import com.hawkeye.quotes.MainActivity
 import com.hawkeye.quotes.MainApp
 import com.hawkeye.quotes.di.modules.AppModule
 import com.hawkeye.quotes.di.modules.FirebaseModule
+import com.hawkeye.quotes.di.modules.ViewModelsModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
