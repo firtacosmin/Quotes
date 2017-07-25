@@ -15,11 +15,11 @@ import javax.inject.Singleton;
  */
 
 @Singleton
-public class QuoteViewModelFactoryJava implements ViewModelProvider.Factory {
+public class QuoteViewModelFactory implements ViewModelProvider.Factory {
     private final Map<Class<? extends ViewModel>, Provider<ViewModel>> creators;
 
     @Inject
-    public QuoteViewModelFactoryJava(Map<Class<? extends ViewModel>, Provider<ViewModel>> creators) {
+    public QuoteViewModelFactory(Map<Class<? extends ViewModel>, Provider<ViewModel>> creators) {
         this.creators = creators;
     }
 

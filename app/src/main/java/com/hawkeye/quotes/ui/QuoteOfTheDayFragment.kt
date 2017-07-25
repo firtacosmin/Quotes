@@ -5,7 +5,6 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,10 +14,8 @@ import com.hawkeye.quotes.R
 import com.hawkeye.quotes.data.Quote
 import com.hawkeye.quotes.data.QuoteViewModel
 import com.hawkeye.quotes.data.QuoteViewModelFactory
-import com.hawkeye.quotes.data.QuoteViewModelFactoryJava
 import com.hawkeye.quotes.databinding.FragmentQuoteOfTheDayBinding
 import com.hawkeye.quotes.di.Injector
-import kotlinx.android.synthetic.main.fragment_browse_quotes.*
 import javax.inject.Inject
 
 
@@ -34,7 +31,7 @@ class QuoteOfTheDayFragment: LifecycleFragment(), Injector.Injectable {
     lateinit var binder:FragmentQuoteOfTheDayBinding
 
     @Inject
-    lateinit var viewModelFactory:QuoteViewModelFactoryJava
+    lateinit var viewModelFactory: QuoteViewModelFactory
 
 
 
