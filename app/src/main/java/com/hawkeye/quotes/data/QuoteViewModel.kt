@@ -4,21 +4,27 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import android.renderscript.Sampler
+import android.util.Log
 import com.google.firebase.database.*
 import com.hawkeye.quotes.utils.Consts
 import java.util.*
 import javax.inject.Inject
+import kotlin.collections.ArrayList
 
 /**
  * Created by firta on 7/23/2017.
  *
  */
-class QuoteViewModel @Inject constructor(dbRef: DatabaseReference, app:Application): AndroidViewModel(app) {
+class QuoteViewModel @Inject constructor(var dbRef: DatabaseReference, app:Application): AndroidViewModel(app) {
 
+    val TAG:String = "QuoteViewModel"
 
 
     var quoteOfTheDayDbRef:Query
     var quoteOfTheDayLiveData:MutableLiveData<Quote>
+
+
 
     var dayOfYear:Int = 0
 
@@ -66,11 +72,13 @@ class QuoteViewModel @Inject constructor(dbRef: DatabaseReference, app:Applicati
 
         })
 
+
+
     }
 
-    fun quoteOfTheDay():LiveData<Quote>{
-        return quoteOfTheDayLiveData
-    }
+    fun quoteOfTheDay():LiveData<Quote> = quoteOfTheDayLiveData
+
+
 
 
     private fun sendNewQuoteOfTheDay(data: DataSnapshot?) {

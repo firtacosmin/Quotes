@@ -50,8 +50,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:text="@{quote.value}"
-            android:textAlignment="center"
-            tools:text="quote value" />
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/quoteAuthor"
@@ -63,7 +62,6 @@
             android:layout_toLeftOf="@+id/imageQuoteDown"
             android:layout_toStartOf="@+id/imageQuoteDown"
             android:text="@{quote.author}"
-            android:textAlignment="center"
-            tools:text="Author" />
+            android:textAlignment="center"/>
     </RelativeLayout>
 </layout>

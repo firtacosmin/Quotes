@@ -15,6 +15,7 @@ import com.hawkeye.quotes.R
 import com.hawkeye.quotes.data.Quote
 import com.hawkeye.quotes.data.QuoteViewModel
 import com.hawkeye.quotes.data.QuoteViewModelFactory
+import com.hawkeye.quotes.data.RandomQuoteViewModel
 import com.hawkeye.quotes.databinding.FragmentBrowseQuotesBinding
 import com.hawkeye.quotes.di.Injector
 import javax.inject.Inject
@@ -30,15 +31,15 @@ class BrowseQuotesFragment : LifecycleFragment(), Injector.Injectable {
 
     private lateinit var binder: FragmentBrowseQuotesBinding
 
-    private lateinit var viewModel: QuoteViewModel
+    private lateinit var viewModel: RandomQuoteViewModel
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binder = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_browse_quotes, container, false)
         binder.setVariable(BR.listener, this)
 
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(QuoteViewModel::class.java)
-        viewModel.quoteOfTheDay().observe(this, Observer<Quote>{ quote ->
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(RandomQuoteViewModel::class.java)
+        viewModel.randomQuote().observe(this, Observer<Quote>{ quote ->
 
             Log.d("TAG","new quote:"+quote?.value)
             binder.quote.setVariable(BR.quote, quote)
@@ -51,7 +52,7 @@ class BrowseQuotesFragment : LifecycleFragment(), Injector.Injectable {
 
     fun refreshClicked(clickedView:View){
 
-        Toast.makeText(context, "refresh clicked", Toast.LENGTH_SHORT).show()
+        viewModel.generateNewRandomQuote()
 
     }
 }
