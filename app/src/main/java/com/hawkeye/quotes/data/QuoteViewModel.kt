@@ -76,7 +76,7 @@ class QuoteViewModel @Inject constructor(dbRef: DatabaseReference, app:Applicati
     private fun sendNewQuoteOfTheDay(data: DataSnapshot?) {
         var q:Quote? = data!!.getValue(Quote::class.java)
         if (q == null || q.value == "") {
-            q = Quote("No Author", dayOfYear, "No Type", "No Value: ${dayOfYear}")
+            q = Quote("dagfdshfg gfjfjg ghcgh gfd", dayOfYear, "No Type", "No Value jhfhgjhgf jfd jgfdjgd jd utdj gfhdsfdshfds hgrd jtf jhtfjfd jytkfjhgcjfd jytr: ${dayOfYear}")
         }
         quoteOfTheDayLiveData.postValue(q)
 

@@ -14,19 +14,20 @@
         android:layout_height="match_parent">
         <include
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="450dp"
             layout="@layout/quote_layout"
             android:id="@+id/quote"
-            />
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
         <android.support.v7.widget.AppCompatImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/refreshBtn"
-            android:layout_below="@+id/quote"
-            android:src="@drawable/ic_cached_black_24dp"
+            android:src="@drawable/ic_cached_black_48dp"
             android:background="@android:color/transparent"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
             android:paddingEnd="100dp"
             android:paddingStart="100dp"
             android:onClick="@{(view)->listener.refreshClicked(view)}"/>

@@ -1,28 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="quote"
-            type="com.hawkeye.quotes.data.Quote"/>
+            type="com.hawkeye.quotes.data.Quote" />
 
     </data>
+
     <RelativeLayout
+
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/imageQuoteUp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ghilimele1" />
+
+        <ImageView
+            android:id="@+id/imageQuoteDown"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/quoteAuthor"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ghilimele2" />
+
         <TextView
             android:id="@+id/quoteValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextPrimary_quote_value"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/imageQuoteUp"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@{quote.value}" />
+            android:layout_marginTop="40dp"
+            android:text="@{quote.value}"
+            android:textAlignment="center"
+            tools:text="quote value" />
 
         <TextView
             android:id="@+id/quoteAuthor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            style="@style/TextSecondary_author"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/quoteValue"
-            android:text="@{quote.author}" />
+            android:layout_marginTop="100dp"
+            android:layout_toLeftOf="@+id/imageQuoteDown"
+            android:layout_toStartOf="@+id/imageQuoteDown"
+            android:text="@{quote.author}"
+            android:textAlignment="center"
+            tools:text="Author" />
     </RelativeLayout>
 </layout>
